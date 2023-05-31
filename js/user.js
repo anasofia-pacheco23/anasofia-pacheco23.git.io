@@ -26,7 +26,7 @@ function createUser(user, email, password) {
 }
 
 function login(user, password) {
-  let users = getCookie("users") == "" ? {} : JSON.parse(getCookie("users"));
+  let users = getCookie("users") != undefined || getCookie("users") == "" ? {} : JSON.parse(getCookie("users"));
   //Valores booleanos (verdadero, falso // 1,0 // si,no)
   if (!getCookie("currentUser")) {
     // No hay una sesión iniciada
