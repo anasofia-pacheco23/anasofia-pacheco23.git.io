@@ -1,5 +1,5 @@
 body {
-    background-image: url("/src/img/fondo-landing.png");
+    background-image: url("../src/img/fondo-landing.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -124,7 +124,7 @@ body {
 }
 
 .left-content {
-    background-image: url("/src/img/19.png");
+    background-image: url("../src/img/19.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -548,4 +548,9 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 section {
     padding-top: 3em;
+}
+
+#carousel img {
+    max-height: 600px;
+    object-fit: cover;
 }
