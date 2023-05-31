@@ -1,0 +1,90 @@
+h2,h3{
+    font-family: 'Poppins', sans-serif !important;
+    color: #353333;
+}
+h3{
+    color: #e5d1d1 !important;
+}
+
+body {
+    background-image: url("/src/img/fondo-landing.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    box-sizing: border-box;
+}
+
+.center-screen {
+    border-color: transparent;
+    border-radius: 15px;
+    background-color: rgb(42, 35, 33) !important;
+    margin-top: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.left-panel {
+    padding: 50px;
+    background-color: rgba(252, 203, 187, 0.9) !important;
+}
+
+.right-panel {
+
+    flex-grow: 1 !important;
+}
+
+.container {
+    box-shadow: 20px 20px 20px rgba(108, 108, 108, 0.577);
+}
+.signup {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FA6094;
+    border-color: transparent;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1px 13px;
+    width: 79px;
+    text-align: center;
+}
+
+.signout {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fa6060;
+    border-color: transparent;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1px 13px;
+    width: 79px;
+    text-align: center;
+}
+
+.login {
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FDB070;
+    border-color: transparent;
+    border-radius: 15px;
+    text-decoration: none;
+    padding: 1px 22px;
+}
+
+.login:hover {
+    text-decoration: none;
+    color:#fff;
+}
+
+@media screen and (min-width: 1280px) {
+    .center-screen {
+        width: 40% !important;
+    }    
+}
