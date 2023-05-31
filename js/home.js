@@ -7,7 +7,9 @@ $(document).ready(function () {
       setCookie("currentUser", "");
       location.reload();
     });
-  } else {
-    $(".logout").hide();
+  } else {  
+  $("#favourites").hide();
+  $(section).hide();
+  $(".logout").hide();
   }
 });
