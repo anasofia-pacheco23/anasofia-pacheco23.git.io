@@ -15,7 +15,7 @@ function createUser(user, email, password) {
     // Verifica si el usuario existe
     if (users[user]) {
       //Sí está creado, entonces sale de la función
-      return false;
+      Swal.fire("El usuario ya existe");
     } else {
       //No está creado, entonces lo crea
       users[user] = { email: email, password: password };
@@ -26,7 +26,7 @@ function createUser(user, email, password) {
 }
 
 function login(user, password) {
-  let users = getCookie("users") == undefined || getCookie("users") == "" ? {} : JSON.parse(getCookie("users"));
+  let users = getCookie("users") == "" || getCookie("users") == undefined ? {} : JSON.parse(getCookie("users"));
   //Valores booleanos (verdadero, falso // 1,0 // si,no)
   if (!getCookie("currentUser")) {
     // No hay una sesión iniciada
@@ -49,7 +49,7 @@ function login(user, password) {
 }
 
 function isLoggedIn() {
-  return getCookie("currentUser") === "" ? false : true;
+  return getCookie("currentUser") === "" || getCookie("currentUser") === undefined ? false : true;
 }
 
 $(document).ready(function () {
