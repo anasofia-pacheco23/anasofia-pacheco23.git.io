@@ -9,7 +9,7 @@ function setCookie(name, value) {
 }
 
 function createUser(user, email, password) {
-  let users = getCookie("users") == "" ? {} : JSON.parse(getCookie("users"));
+  let users = getCookie("users") == "" || getCookie("users") == undefined ? {} : JSON.parse(getCookie("users"));
   // Verifica que las variables están con información
   if (user && password && email) {
     // Verifica si el usuario existe
