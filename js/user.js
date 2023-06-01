@@ -68,7 +68,7 @@ $(document).ready(function () {
       });
 
     if (login(formData.username, formData.password)) {
-      window.location.href = "/";
+      window.location.href = "index.html";
     }
   });
 
@@ -81,7 +81,7 @@ $(document).ready(function () {
         formData[item["name"]] = item["value"];
       });
     if (createUser(formData.username, formData.email, formData.password)) {
-      window.location.href = "/login.html";
+      window.location.href = "login.html";
     }
   });
 });
