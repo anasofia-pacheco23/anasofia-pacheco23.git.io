@@ -1,15 +1,22 @@
 function getCookie(name) {
+  /*
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) return parts.pop().split(";").shift();
+  */
+  return localStorage.getItem(name);
 }
 
 function setCookie(name, value) {
-  document.cookie = `${name}=${value}`;
+  localStorage.setItem(name, value);
+  //document.cookie = `${name}=${value}`;
 }
 
 function createUser(user, email, password) {
-  let users = getCookie("users") == "" || getCookie("users") == undefined ? {} : JSON.parse(getCookie("users"));
+  let users =
+    getCookie("users") == "" || getCookie("users") == undefined
+      ? {}
+      : JSON.parse(getCookie("users"));
   // Verifica que las variables están con información
   if (user && password && email) {
     // Verifica si el usuario existe
@@ -18,23 +25,26 @@ function createUser(user, email, password) {
       Swal.fire("El usuario ya existe");
     } else {
       //No está creado, entonces lo crea
-      users[user] = { email: email, password: password };
+      users[email] = { user: user, password: password };
       setCookie("users", JSON.stringify(users));
       return true;
     }
   }
 }
 
-function login(user, password) {
-  let users = getCookie("users") == "" || getCookie("users") == undefined ? {} : JSON.parse(getCookie("users"));
+function login(email, password) {
+  let users =
+    getCookie("users") == "" || getCookie("users") == undefined
+      ? {}
+      : JSON.parse(getCookie("users"));
   //Valores booleanos (verdadero, falso // 1,0 // si,no)
   if (!getCookie("currentUser")) {
     // No hay una sesión iniciada
     // Verifica si el usuario existe
-    if (users[user]) {
-      if (users[user].password === password) {
+    if (users[email]) {
+      if (users[email].password === password) {
         // Configura el usuario como la sesión actual
-        setCookie("currentUser", user);
+        setCookie("currentUser", users[email].user);
         return true;
       } else {
         Swal.fire("Contraseña incorrecta");
@@ -49,7 +59,10 @@ function login(user, password) {
 }
 
 function isLoggedIn() {
-  return getCookie("currentUser") === "" || getCookie("currentUser") === undefined ? false : true;
+  return getCookie("currentUser") === "" ||
+    getCookie("currentUser") === undefined
+    ? false
+    : true;
 }
 
 $(document).ready(function () {
