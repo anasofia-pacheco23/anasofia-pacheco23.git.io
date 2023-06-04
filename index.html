@@ -8,9 +8,9 @@
     <title>Cottage Design</title>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="./js/api.js"></script>
     <script src="./js/user.js"></script>
     <script src="./js/home.js"></script>
-    <script src="./js/api.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
@@ -27,7 +27,7 @@
         <header>
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand logo" href="landing.html">
+                    <a class="navbar-brand logo" href="index.html">
                         <img src="./src/img/Group 18.png" alt="logo" class="logoImg">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -37,13 +37,20 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="links nav-link" aria-current="page" href="#carousel">Carousel</a>
+                                <a class="links nav-link" aria-current="page" href="favourites.html">Favoritos</a>
+
                             </li>
                             <li class="nav-item">
-                                <a class="links nav-link" href="#">About us</a>
+                                <a class="links nav-link" aria-current="page" href="profile.html">Perfil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="links nav-link" href="#">Contact us</a>
+                                <a class="links nav-link" href="#favourites">Favoritos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="links nav-link" href="#portfolio">Portafolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="links nav-link" href="#about">Sobre nosotros</a>
                             </li>
                         </ul>
                         <span class="navbar-text">
@@ -78,22 +85,14 @@
 
                 </div>
             </div>
-            <section class="page-section" id="carousel">
+            <section class="page-section" id="favourites">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Favoritos</h2>
                     <h3 id="user-favs" class="section-subheading text-muted"></h3>
                 </div>
                 <div id="carousel" class="carousel slide">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="./src/img/dress1.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="./src/img/dress2.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="./src/img/dress3.jpg" alt="Third slide">
-                        </div>
+
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -109,81 +108,10 @@
                 <div class="container">
                     <div class="text-center">
                         <h2 class="section-heading text-uppercase">Portafolio</h2>
-                        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                        <h3 class="section-subheading text-muted">Conoce nuestro catálogo.</h3>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 col-sm-6 mb-4">
-                            <!-- Portfolio item 1-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" href="#">
-                                    <img class="img-fluid" src="./src/img/dress1.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Threads</div>
-                                    <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 mb-4">
-                            <!-- Portfolio item 2-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" href="#">
-                                    <img class="img-fluid" src="./src/img/dress2.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Explore</div>
-                                    <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 mb-4">
-                            <!-- Portfolio item 3-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" href="#">
-                                    <img class="img-fluid" src="./src/img/dress3.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Finish</div>
-                                    <div class="portfolio-caption-subheading text-muted">Identity</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 mb-4">
-                            <!-- Portfolio item 1-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" href="#">
-                                    <img class="img-fluid" src="./src/img/dress1.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Threads</div>
-                                    <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 mb-4">
-                            <!-- Portfolio item 2-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" href="#">
-                                    <img class="img-fluid" src="./src/img/dress2.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Explore</div>
-                                    <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 mb-4">
-                            <!-- Portfolio item 3-->
-                            <div class="portfolio-item">
-                                <a class="portfolio-link" href="#">
-                                    <img class="img-fluid" src="./src/img/dress3.jpg" alt="..." />
-                                </a>
-                                <div class="portfolio-caption">
-                                    <div class="portfolio-caption-heading">Finish</div>
-                                    <div class="portfolio-caption-subheading text-muted">Identity</div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </section>
@@ -191,8 +119,7 @@
             <section class="page-section" id="about">
                 <div class="container">
                     <div class="text-center">
-                        <h2 class="section-heading text-uppercase">About</h2>
-                        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                        <h2 class="section-heading text-uppercase">Sobre nosotros</h2>
                     </div>
                     <ul class="timeline">
                         <li>
@@ -200,12 +127,14 @@
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                    <h4 class="subheading">Nuestros inicios</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                                    <p class="text-muted">En 2009, un grupo de amigos apasionados por la moda y el
+                                        diseño decidió unir fuerzas para crear una empresa de ropa y textiles. Su visión
+                                        era ofrecer prendas únicas y de alta calidad que reflejaran las últimas
+                                        tendencias de la moda. Comenzaron a trabajar en su línea de productos y a
+                                        establecer contactos con proveedores y fabricantes.
                                     </p>
                                 </div>
                             </div>
@@ -214,13 +143,15 @@
                             <div class="timeline-image"><img class="rounded-circle img-fluid" /></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
+                                    <h4>Marzo 2011</h4>
+                                    <h4 class="subheading">Una agencia fue creada</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                                    <p class="text-muted">Después de meses de arduo trabajo y planificación, la empresa
+                                        finalmente lanzó su primera colección en marzo de 2011. La colección recibió una
+                                        excelente respuesta por parte de los clientes y de la industria de la moda en
+                                        general. Sus diseños frescos y vanguardistas captaron la atención de los
+                                        compradores y lograron generar un impulso inicial para la empresa.
                                     </p>
                                 </div>
                             </div>
@@ -230,12 +161,15 @@
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>December 2015</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
+                                    <h4 class="subheading">Transiciones</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                                    <p class="text-muted">A medida que la empresa crecía, también enfrentaba desafíos.
+                                        En diciembre de 2015, se produjo un cambio importante en la industria textil a
+                                        nivel mundial debido a preocupaciones ambientales y sociales. Los consumidores
+                                        comenzaron a exigir una mayor sostenibilidad y transparencia en la cadena de
+                                        suministro de la moda. La empresa se dio cuenta de que necesitaba adaptarse para
+                                        seguir siendo relevante.
                                     </p>
                                 </div>
                             </div>
@@ -244,26 +178,17 @@
                             <div class="timeline-image"><img class="rounded-circle img-fluid" /></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>July 2020</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
+                                    <h4>Julio 2020</h4>
+                                    <h4 class="subheading">Expansión</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                                    <p class="text-muted">En julio de 2020, la empresa logró alcanzar un hito importante
+                                        al expandirse a nivel internacional. Gracias a su compromiso con la calidad, la
+                                        sostenibilidad y el diseño innovador, ganaron reconocimiento en el mercado
+                                        global. Abrieron nuevas tiendas en varias ciudades importantes alrededor del
+                                        mundo y establecieron alianzas estratégicas con grandes minoristas.
                                     </p>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>
-                                    Be Part
-                                    <br />
-                                    Of Our
-                                    <br />
-                                    Story!
-                                </h4>
                             </div>
                         </li>
                     </ul>

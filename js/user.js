@@ -25,7 +25,12 @@ function createUser(user, email, password) {
       Swal.fire("El usuario ya existe");
     } else {
       //No está creado, entonces lo crea
-      users[email] = { user: user, password: password };
+      users[email] = {
+        email: email,
+        user: user,
+        password: password,
+        favourites: [],
+      };
       setCookie("users", JSON.stringify(users));
       return true;
     }
@@ -60,9 +65,67 @@ function login(email, password) {
 
 function isLoggedIn() {
   return getCookie("currentUser") === "" ||
-    getCookie("currentUser") === undefined
+    getCookie("currentUser") === undefined ||
+    getCookie("currentUser") === null
     ? false
     : true;
+}
+
+function setFavourite(object) {
+  if (isLoggedIn()) {
+    let users =
+      getCookie("users") == "" || getCookie("users") == undefined
+        ? {}
+        : JSON.parse(getCookie("users"));
+
+        
+    // Ir por los usuarios hasta encotnrar el usuario en sesión
+    
+    Object.values(users).forEach(function (user) {
+      
+      if (getCookie("currentUser") == user.user) {
+        //Buscar si el usuario tiene el item en lista
+        let itemExists = false;
+
+        Object.values(user.favourites).forEach(function (fav) {
+          if (fav.id === object.id) {
+            itemExists = true;
+          }
+        });
+
+        if (!itemExists) {
+          user.favourites.push({
+            id: object.id,
+            title: object.title,
+            price: object.price,
+            image: object.image,
+          });
+          users[user.email] = user;
+          setCookie("users", JSON.stringify(users));
+        } else {
+          Swal.fire("Ya tienes agregado ese artículo en tus favoritos")
+        }
+      }
+    });
+  }
+}
+
+function getCurrentUserInfo() {
+  if (isLoggedIn()) {
+    let userInfo;
+    let users =
+      getCookie("users") == "" || getCookie("users") == undefined
+        ? {}
+        : JSON.parse(getCookie("users"));
+    // Ir por los usuarios hasta encotnrar el usuario en sesión
+    Object.values(users).forEach(function (user) {
+      if (getCookie("currentUser") == user.user) {
+        userInfo = user;
+      }
+    });
+    return userInfo;  
+  }
+  
 }
 
 $(document).ready(function () {
