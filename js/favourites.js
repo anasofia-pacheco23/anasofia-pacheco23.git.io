@@ -26,8 +26,10 @@ $(document).ready(function () {
   if (isLoggedIn()) {
     $(".login").hide();
     $(".signup").hide();
-    search("ropa", 12).then(function () {
-      
+    search("ropa", 12);
+    $(".logout").on("click", () => {
+      setCookie("currentUser", "");
+      location.reload();
     });
   } else {
     window.location.href = "index.html";

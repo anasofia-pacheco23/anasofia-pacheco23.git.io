@@ -5,6 +5,10 @@ $(document).ready(function () {
     $("#email").text(user.email);
     $(".login").hide();
     $(".signup").hide();
+    $(".logout").on("click", () => {
+        setCookie("currentUser", "");
+        location.reload();
+      });
   } else {
     document.location.href = "index.html";
   }

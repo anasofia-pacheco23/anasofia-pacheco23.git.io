@@ -20,7 +20,7 @@ function createUser(user, email, password) {
   // Verifica que las variables están con información
   if (user && password && email) {
     // Verifica si el usuario existe
-    if (users[user]) {
+    if (users[email]) {
       //Sí está creado, entonces sale de la función
       Swal.fire("El usuario ya existe");
     } else {
