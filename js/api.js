@@ -10,8 +10,21 @@ const search = (query,quantity) => {
     success: function (response) {
         for (let i = 0; i < quantity; i++){
             item = response.results[i];
-            createCard(item.id,item.title,item.price,item.thumbnail);
+            createCard(item.id,
+                item.title,
+                item.price,
+                item.thumbnail);
         }
+        $(".add-fav").click((e) => {
+            e.preventDefault();
+            const data = e.currentTarget.offsetParent;
+            setFavourite({
+              id: data.getAttribute("data-id"),
+              title: data.getAttribute("data-title"),
+              price: data.getAttribute("data-price"),
+              image: data.getAttribute("data-image"),
+            });
+          });
     },
   });
 };

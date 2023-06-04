@@ -27,16 +27,7 @@ $(document).ready(function () {
     $(".login").hide();
     $(".signup").hide();
     search("ropa", 12).then(function () {
-      $(".add-fav").click((e) => {
-        e.preventDefault();
-        const data = e.currentTarget.offsetParent;
-        setFavourite({
-          id: data.getAttribute("data-id"),
-          title: data.getAttribute("data-title"),
-          price: data.getAttribute("data-price"),
-          image: data.getAttribute("data-image"),
-        });
-      });
+      
     });
   } else {
     window.location.href = "index.html";
