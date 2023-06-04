@@ -78,7 +78,7 @@ function setFavourite(object) {
         ? {}
         : JSON.parse(getCookie("users"));
 
-        
+
     // Ir por los usuarios hasta encotnrar el usuario en sesión
     
     Object.values(users).forEach(function (user) {
@@ -102,6 +102,7 @@ function setFavourite(object) {
           });
           users[user.email] = user;
           setCookie("users", JSON.stringify(users));
+          Swal.fire("Artículo agregado a tus favoritos")
         } else {
           Swal.fire("Ya tienes agregado ese artículo en tus favoritos")
         }
